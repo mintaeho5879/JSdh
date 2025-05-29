@@ -11,6 +11,10 @@ body {
   height: 100vh;
   background-color: #ddd;
 }
+/* 버튼'이면서' 스탑컬러도 가지고 있는 아이 */
+#button.stop-color { 
+  background-color: tomato;
+}
 
 .stopwatch /*클래스 선택자*/ {
   /* display: inline-block;  인라인은 height, width가 설정 안됨, 인라인 요소와 block요소를 쓰고싶을때 사용 */
@@ -35,7 +39,8 @@ body {
   align-items: center;
   gap: 10px;
 }
-#screen {
+/* 아이디 선택자 */
+#screen { 
   padding: 8px 10px;
   font-family: 'Press Start 2P', system-ui;
   color: white;
@@ -45,7 +50,7 @@ body {
 #button {
   padding: 5px 10px;
   color: white;
-  background-color: rgb(50, 50, 199);
+  background-color: steelblue;
   border-radius: 2px;
   cursor: pointer;
 }
