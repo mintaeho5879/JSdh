@@ -1,0 +1,6 @@
+html, body { margin : 0px;}
+span { background-color: slateblue; display: inline-block;}
+.container { background-color: white;}
+.container div { background-color: coral;}
+
+span, .container div { padding: 20px; }

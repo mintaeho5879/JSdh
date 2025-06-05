@@ -1,0 +1,8 @@
+span { background-color: slateblue;}
+.container { background-color: white;}
+.container div { background-color: coral; display: inline;}
+.container :first-child { color: red;}
+/* .container :nth-child(2) { color:blue;} */
+/* .container div:first-of-type { color : blue;} */
+.container :first-child + div {color : blue;}
+.inline_block { display: inline-block; width: 200px; height: 200px;}
