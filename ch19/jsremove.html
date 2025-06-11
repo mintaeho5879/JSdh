@@ -26,7 +26,7 @@
             <li>포도</li>
         </ul>
     </section>
-    <section>
+    <section id="meat">
         <h2>고기</h2>
         <ul>
             <li class="soldout">소고기</li>
@@ -45,6 +45,15 @@
        const $secondSection = document.querySelector('#sweets');
        $secondSection.append($vegetableTitle);
        $secondSection.append($selfH2Tag);
+
+       //$secondSection.removeChild();
+       $secondSection.children[0].remove();
+
+       const $meat = document.querySelectorAll('#meat ul li');
+       for(let i = 0; i < $meat.length; i++) {
+            $meat[i].remove();
+       }
+       
     </script>
 </body>
 </html>
