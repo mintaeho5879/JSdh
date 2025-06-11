@@ -13,6 +13,8 @@ function sum(n1,n2) {
 }
 
 sum(1,2);
+sum(5,6,7); //7은 무시
+//sum(5); 5 + Undefined = NaN
 
 const copySum = sum;
 copySum(1,2);
