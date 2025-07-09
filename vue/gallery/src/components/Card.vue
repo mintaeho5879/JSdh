@@ -26,7 +26,7 @@ const put = async () => {
     }
     const res = await addItem( props.item.id );
     if(res === undefined || res.status !== 200) {return};
-    console.log('카트담기 성공!');
+    alert('카트담기 성공!');
     
 };
 </script>

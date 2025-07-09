@@ -1,5 +1,5 @@
 <script setup>
-import { getItems } from '@/services/cartService';
+import { getItems, removeItem } from '@/services/cartService';
 import { reactive, onMounted } from 'vue';
 
 // 반응형 상태
@@ -21,12 +21,14 @@ onMounted(()=> {
 
 //장바구니 상품 삭제
 const remove = async itemId => {
-    const res = await removeItem(itemId);
 
-    // if(res.status === 200) {
-    //     alert("선택하신 장바구니의 상품을 삭제했습니다.");
-    //     await load();
-    // }
+    const json = {itemId}
+    const res = await removeItem(json);
+
+    if(res.status === 200) {
+        alert("선택하신 장바구니의 상품을 삭제했습니다.");
+        await load();
+    }
 }
 // //커스텀 생성 훅
 // (async function onCreated() {
@@ -45,7 +47,7 @@ const remove = async itemId => {
                     <span class="price">
                         {{ (i.price - i.price*i.discountPer / 100).toLocaleString() }}원
                     </span>
-                    <span class="remove float-end" @click="remove(i.id)" title="삭제">&times;</span>
+                    <span class="remove float-end" @click="remove(i.itemId)" title="삭제">&times;</span>
                 </li>
             </ul>
             <div class="act">
