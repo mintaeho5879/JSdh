@@ -9,6 +9,10 @@ export const getItems = () => {
     return axios.get('/cart').catch(e => e.response);
 }
 
-export const removeItem = (params) => {
-    return axios.delete('/cart',{params}).catch(e => e.response);
-} 
+export const removeItem = cartId => {
+    return axios.delete(`/cart/${cartId}`).catch(e => e.response);
+}
+
+export const clearAll = () => {
+    return axios.delete('/cart').catch(e => e.response)
+}
