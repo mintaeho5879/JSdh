@@ -44,9 +44,19 @@ const submit = async () => {
     if (state.form.payment !== 'card') { //결제수단이 카드가 아니라면
         state.form.cardNumber = '';
     }
-
     state.form.itemIds = state.items.map(item => item.itemId);
     const res = await addOrder(state.form);
+    if (res === undefined || res.status !== 200) {
+        alert('에러 발생!');
+        return;
+    }
+    const message = ['주문이 완료되었습니다.'];
+    if (state.form.payment === 'bank') {
+        const price =computedTotalPrice.value.toLocaleString
+        message.push(`농협 247-02-350111 계좌로 ${price}원을 입금해주시기 바랍니다.`);
+    }
+    alert(message.join('\n'));
+    await router.push('/');
 }
 </script>
 
